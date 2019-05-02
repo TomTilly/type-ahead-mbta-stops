@@ -18,3 +18,24 @@ body {
 	background-repeat: no-repeat;
 	background-position: center;
 }
+
+body {
+	display: flex;
+	justify-content: center;
+}
+
+form {
+	margin-top: 50px;
+	width: 50%;
+}
+
+input {
+	width: 100%;
+	font-size: 1.5em;
+	padding: .75em;
+	color: #656565;
+}
+
+::placeholder {
+	color: #aaaaaa;
+}
