@@ -17,6 +17,7 @@ body {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
+	color: #656565;
 }
 
 body {
@@ -33,9 +34,24 @@ input {
 	width: 100%;
 	font-size: 1.5em;
 	padding: .75em;
-	color: #656565;
 }
 
 ::placeholder {
 	color: #aaaaaa;
+}
+
+ul {
+	padding: 0;
+	margin-top: 0;
+}
+
+li {
+	background: white;
+	list-style-type: none;
+	padding: 1em;
+	transition: all .5s;
+}
+
+li:hover {
+	background: #efefef;
 }
