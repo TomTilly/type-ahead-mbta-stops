@@ -16,6 +16,7 @@ body {
 	background: url('boston-min.jpg');
 	background-size: cover;
 	background-position: center;
+	background-attachment: fixed;
 	color: #656565;
 	font-family: 'Roboto', sans-serif;
 }
