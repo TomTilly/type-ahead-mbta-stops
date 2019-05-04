@@ -1,16 +1,31 @@
 const endpoint = 'https://api-v3.mbta.com/stops';
+const searchInput = document.querySelector('.search');
+const suggestions = document.querySelector('.suggestions');
 let stops;
 
 fetch(endpoint)
 	.then(resp => resp.json())
 	.then(respData => {
 		stops = respData.data.map(stop => stop.attributes.name);
-		console.log(stops);
 	});
 
 function findMatches(stopToMatch, stops){
-	return stops.filter(stop => {
+	return stops.filter((stop) => {
 		const regex = new RegExp(stopToMatch, 'gi');
 		return stop.match(regex);
 	});
 }
+
+function displayMatches(){
+	if(this.value){
+		const matchArray = findMatches(this.value, stops);
+		const html = matchArray.map(stop => {
+			return `<li>${stop}</li>`;
+		}).join('');
+		suggestions.innerHTML = html;	
+	} else {
+		suggestions.innerHTML = '';
+	}
+}
+
+searchInput.addEventListener('input', displayMatches);
