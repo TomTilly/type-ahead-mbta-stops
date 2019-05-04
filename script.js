@@ -20,7 +20,9 @@ function displayMatches(){
 	if(this.value){
 		const matchArray = findMatches(this.value, stops);
 		const html = matchArray.map(stop => {
-			return `<li>${stop}</li>`;
+			const regex = new RegExp(this.value, 'gi');
+			const stopName = stop.replace(regex, `<span class="hl">$&</span>`);
+			return `<li>${stopName}</li>`;
 		}).join('');
 		suggestions.innerHTML = html;	
 	} else {
